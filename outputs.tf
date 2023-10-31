@@ -7,5 +7,9 @@ output "vpc_id" {
 }
 
 output "azs" {
-  value = module.this.azs
+  value = local.azs
+}
+
+output "public_subnet_ids" {
+  value = local.public_subnet_ids
 }
