@@ -66,3 +66,7 @@ variable "database_route_table_tags" {
     Name: "roboshop-database"
   }
 }
+
+variable "nat_gateway_tags" {
+  default = { }
+}
