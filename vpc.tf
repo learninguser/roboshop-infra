@@ -1,9 +1,10 @@
 module "this" {
-  source      = "../terraform-aws-vpc"
-  cidr_block  = var.cidr_block
-  common_tags = var.common_tags
-  vpc_tags    = var.vpc_tags
-  igw_tags    = var.igw_tags
+  project_name = var.project_name
+  source       = "../terraform-aws-vpc"
+  cidr_block   = var.cidr_block
+  common_tags  = var.common_tags
+  vpc_tags     = var.vpc_tags
+  igw_tags     = var.igw_tags
 
   # Public subnet creation
   public_subnet_cidr  = var.public_subnet_cidr
