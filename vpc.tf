@@ -1,6 +1,6 @@
-module "this" {
+module "vpc" {
   project_name = var.project_name
-  source       = "../terraform-aws-vpc"
+  source       = "git::https://github.com/learninguser/terraform-aws-vpc.git"
   cidr_block   = var.cidr_block
   common_tags  = var.common_tags
   vpc_tags     = var.vpc_tags
