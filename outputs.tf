@@ -5,3 +5,7 @@
 output "vpc_id" {
   value = local.vpc_id
 }
+
+output "azs" {
+  value = module.this.azs
+}
