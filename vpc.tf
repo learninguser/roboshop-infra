@@ -10,7 +10,7 @@ module "this" {
   public_subnet_cidr  = var.public_subnet_cidr
   public_subnet_names = var.public_subnet_names
   nat_gateway_tags = var.nat_gateway_tags
-  
+
   # Private subnet creation
   private_subnet_cidr  = var.private_subnet_cidr
   private_subnet_names = var.private_subnet_names
@@ -23,4 +23,5 @@ module "this" {
   public_route_table_tags   = var.public_route_table_tags
   private_route_table_tags  = var.private_route_table_tags
   database_route_table_tags = var.database_route_table_tags
+  db_subnet_group_tags = var.db_subnet_group_tags
 }

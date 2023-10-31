@@ -70,3 +70,7 @@ variable "database_route_table_tags" {
 variable "nat_gateway_tags" {
   default = { }
 }
+
+variable "db_subnet_group_tags" {
+  default = {}
+}
