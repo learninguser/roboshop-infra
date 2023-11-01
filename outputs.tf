@@ -21,3 +21,7 @@ output "private_subnet_ids" {
 output "database_subnet_ids" {
   value = local.database_subnet_ids
 }
+
+output "sg_id" {
+  value = local.security_group_id
+}
