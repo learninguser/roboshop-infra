@@ -25,3 +25,7 @@ output "database_subnet_ids" {
 output "sg_id" {
   value = local.security_group_id
 }
+
+output "devops_practice_ami_id" {
+  value = data.aws_ami.devops_practice.id
+}
