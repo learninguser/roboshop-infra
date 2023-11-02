@@ -7,7 +7,7 @@ module "records" {
 
   records = [
     {
-      name    = "${each.key}"
+      name    = "${each.key}-dev"
       type    = "A"
       ttl     = 1
       records = [each.key == "Web" ? each.value.public_ip : each.value.private_ip]
