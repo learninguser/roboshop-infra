@@ -112,7 +112,7 @@ variable "instances" {
     Cart = "t2.micro"
     Shipping = "t2.micro"
     Payment = "t2.micro"
-    Web = "t2.micro"
+    Frontend = "t2.micro"
   }
 }
 
