@@ -1,14 +1,20 @@
 module "ec2_instance" {
+  for_each      = var.instances
   source        = "terraform-aws-modules/ec2-instance/aws"
-  ami           = data.aws_ami.devops_practice
-  instance_type = "t2.micro"
+  ami           = data.aws_ami.devops_practice.id
+  instance_type = each.value
 
   vpc_security_group_ids = [local.security_group_id]
-  subnet_id              = local.public_subnet_ids[0] # us-east-1a
+  subnet_id = (
+    each.key == "Web" ? local.public_subnet_ids[0] :
+    contains(["MySQL", "MongoDB", "Redis", "MySQL"], each.key) ?
+    local.database_subnet_ids[0] : local.private_subnet_ids[0]
+  )
 
-  tags = {
-    Name        = "test"
-    Terraform   = "true"
-    Environment = "dev"
-  }
+  tags = merge(
+    {
+        Name = each.key
+    },
+    var.common_tags
+  )
 }
