@@ -5,4 +5,5 @@ locals {
   private_subnet_ids = module.vpc.private_subnet_ids
   database_subnet_ids = module.vpc.database_subnet_ids
   security_group_id = module.sg.sg_id
+  ip_address = module.ec2_instance
 }
