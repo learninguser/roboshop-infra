@@ -13,6 +13,10 @@ variable "common_tags" {
   }
 }
 
+variable "environment" {
+  default = "dev"
+}
+
 variable "vpc_tags" {
   default = {
     Name : "Roboshop"
